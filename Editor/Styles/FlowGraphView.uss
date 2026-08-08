@@ -1,0 +1,22 @@
+GridBackground {
+    --grid-background-color: rgb(30, 30, 30);
+    --line-color: rgba(255, 255, 255, 0.055);
+    --thick-line-color: rgba(255, 255, 255, 0.105);
+    --spacing: 20;
+    --thick-lines: 5;
+}
+
+.flow-node-running {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-left-color: rgb(73, 210, 255);
+    border-right-color: rgb(73, 210, 255);
+    border-top-color: rgb(73, 210, 255);
+    border-bottom-color: rgb(73, 210, 255);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+}

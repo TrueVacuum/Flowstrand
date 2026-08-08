@@ -14,5 +14,12 @@
   "author": {
     "name": "TrueVacuum",
     "url": "https://github.com/TrueVacuum"
-  }
+  },
+  "samples": [
+    {
+      "displayName": "Basic Flow",
+      "description": "A minimal sequential, parallel, and Join All flow graph.",
+      "path": "Samples~/Basic Flow"
+    }
+  ]
 }

@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bc2875b5b48139458317bfd0483db5e, type: 3}
+  m_Name: BasicFlow
+  m_EditorClassIdentifier: Flowstrand.Runtime::Flowstrand.FlowGraph
+  _formatVersion: 1
+  _nodes:
+  - rid: 1001
+  - rid: 1002
+  - rid: 1003
+  - rid: 1004
+  - rid: 1005
+  - rid: 1006
+  - rid: 1007
+  _edges:
+  - _id: 10000000000000000000000000000001
+    _outputNodeId: sample_entry
+    _outputPortId: completed
+    _inputNodeId: sample_start_log
+    _inputPortId: enter
+  - _id: 10000000000000000000000000000002
+    _outputNodeId: sample_start_log
+    _outputPortId: completed
+    _inputNodeId: sample_parallel
+    _inputPortId: enter
+  - _id: 10000000000000000000000000000003
+    _outputNodeId: sample_parallel
+    _outputPortId: sample_branch_1
+    _inputNodeId: sample_delay_1
+    _inputPortId: enter
+  - _id: 10000000000000000000000000000004
+    _outputNodeId: sample_parallel
+    _outputPortId: sample_branch_2
+    _inputNodeId: sample_delay_2
+    _inputPortId: enter
+  - _id: 10000000000000000000000000000005
+    _outputNodeId: sample_delay_1
+    _outputPortId: completed
+    _inputNodeId: sample_join_all
+    _inputPortId: sample_join_input_1
+  - _id: 10000000000000000000000000000006
+    _outputNodeId: sample_delay_2
+    _outputPortId: completed
+    _inputNodeId: sample_join_all
+    _inputPortId: sample_join_input_2
+  - _id: 10000000000000000000000000000007
+    _outputNodeId: sample_join_all
+    _outputPortId: completed
+    _inputNodeId: sample_complete_log
+    _inputPortId: enter
+  references:
+    version: 2
+    RefIds:
+    - rid: 1001
+      type: {class: EntryNode, ns: Flowstrand, asm: Flowstrand.Runtime}
+      data:
+        _id: sample_entry
+        _position: {x: 80, y: 260}
+    - rid: 1002
+      type: {class: LogNode, ns: Flowstrand, asm: Flowstrand.Runtime}
+      data:
+        _id: sample_start_log
+        _position: {x: 300, y: 260}
+        _message: Basic Flow started
+    - rid: 1003
+      type: {class: ParallelNode, ns: Flowstrand, asm: Flowstrand.Runtime}
+      data:
+        _id: sample_parallel
+        _position: {x: 540, y: 260}
+        _dynamicPortIds:
+        - sample_branch_1
+        - sample_branch_2
+    - rid: 1004
+      type: {class: DelayNode, ns: Flowstrand, asm: Flowstrand.Runtime}
+      data:
+        _id: sample_delay_1
+        _position: {x: 800, y: 180}
+        _seconds: 1
+    - rid: 1005
+      type: {class: DelayNode, ns: Flowstrand, asm: Flowstrand.Runtime}
+      data:
+        _id: sample_delay_2
+        _position: {x: 800, y: 340}
+        _seconds: 2
+    - rid: 1006
+      type: {class: JoinAllNode, ns: Flowstrand, asm: Flowstrand.Runtime}
+      data:
+        _id: sample_join_all
+        _position: {x: 1060, y: 260}
+        _dynamicPortIds:
+        - sample_join_input_1
+        - sample_join_input_2
+    - rid: 1007
+      type: {class: LogNode, ns: Flowstrand, asm: Flowstrand.Runtime}
+      data:
+        _id: sample_complete_log
+        _position: {x: 1320, y: 260}
+        _message: Basic Flow completed
