@@ -1,0 +1,11 @@
+# IDE generated files
+.vscode/
+.idea/
+*.csproj
+*.sln
+*.user
+*.userprefs
+
+# Operating system files
+.DS_Store
+Thumbs.db

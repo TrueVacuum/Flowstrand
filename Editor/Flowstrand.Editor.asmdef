@@ -1,0 +1,10 @@
+{
+  "name": "Flowstrand.Editor",
+  "rootNamespace": "Flowstrand.Editor",
+  "references": [
+    "Flowstrand.Runtime"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ]
+}
